@@ -1,3 +1,6 @@
+## Version 1.1.7
+Adding package for service layer.
+
 ## Version 1.1.6
 Adding relationship between Publisher and Book.
 
