@@ -28,22 +28,21 @@ public class BootstrapData implements CommandLineRunner {
     @Override
     public void run(String... args) {
         Author eric = createAuthor("Eric", "Evans");
-        Author ericSaved = this.authorRepository.save(eric);
-
         Book ddd = createBook("Domain Driven Design", "123456");
-        Book dddSaved = this.bookRepository.save(ddd);
 
-        ericSaved.getBooks().add(dddSaved);
-        this.authorRepository.save(ericSaved);
+        eric.getBooks().add(ddd);
+        ddd.getAuthors().add(eric);
+        this.authorRepository.save(eric);
+        this.bookRepository.save(ddd);
 
         Author rod = createAuthor("Rod", "Johnson");
-        Author rodSaved = this.authorRepository.save(rod);
-
         Book noEJB = createBook("J2EEE Development without DJB", "789123");
-        Book noEJBSaved = this.bookRepository.save(noEJB);
 
-        rodSaved.getBooks().add(noEJBSaved);
-        this.authorRepository.save(rodSaved);
+
+        rod.getBooks().add(noEJB);
+        noEJB.getAuthors().add(rod);
+        this.authorRepository.save(rod);
+        this.bookRepository.save(noEJB);
 
         Publisher publisher = createPublisher("Publisher name",
                 "Sofia",
@@ -51,11 +50,11 @@ public class BootstrapData implements CommandLineRunner {
                 "Center 123",
                 "123456");
         Publisher savedPublisher = this.publisherRepository.save(publisher);
-        dddSaved.setPublisher(savedPublisher);
-        noEJBSaved.setPublisher(savedPublisher);
+        ddd.setPublisher(savedPublisher);
+        noEJB.setPublisher(savedPublisher);
 
-        bookRepository.save(dddSaved);
-        bookRepository.save(noEJBSaved);
+        bookRepository.save(ddd);
+        bookRepository.save(noEJB);
 
         System.out.println("In Bootstrap");
         System.out.println("Author count " + this.authorRepository.count());
