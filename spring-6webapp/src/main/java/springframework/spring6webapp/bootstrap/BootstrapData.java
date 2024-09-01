@@ -5,19 +5,24 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import springframework.spring6webapp.domain.Author;
 import springframework.spring6webapp.domain.Book;
+import springframework.spring6webapp.domain.Publisher;
 import springframework.spring6webapp.repositories.AuthorRepository;
 import springframework.spring6webapp.repositories.BookRepository;
+import springframework.spring6webapp.repositories.PublisherRepository;
 
 @Component
 public class BootstrapData implements CommandLineRunner {
     private final AuthorRepository authorRepository;
     private final BookRepository bookRepository;
+    private final PublisherRepository publisherRepository;
 
     @Autowired
     public BootstrapData(AuthorRepository authorRepository,
-                         BookRepository bookRepository) {
+                         BookRepository bookRepository,
+                         PublisherRepository publisherRepository) {
         this.authorRepository = authorRepository;
         this.bookRepository = bookRepository;
+        this.publisherRepository = publisherRepository;
     }
 
     @Override
@@ -43,14 +48,14 @@ public class BootstrapData implements CommandLineRunner {
         System.out.println("In Bootstrap");
         System.out.println("Author count " + this.authorRepository.count());
         System.out.println("Book count " + this.bookRepository.count());
-    }
 
-    private static Book createBook(String title,
-                                   String isbn) {
-        Book book = new Book();
-        book.setTitle(title);
-        book.setIsbn(isbn);
-        return book;
+        Publisher publisher = createPublisher("Publisher name",
+                "Sofia",
+                "Some state",
+                "Center 123",
+                "123456");
+        this.publisherRepository.save(publisher);
+        System.out.println("Publisher count " + this.publisherRepository.count());
     }
 
     private Author createAuthor(String firstName,
@@ -59,5 +64,27 @@ public class BootstrapData implements CommandLineRunner {
         author.setFirstName(firstName);
         author.setLastName(lastName);
         return author;
+    }
+
+    private Book createBook(String title,
+                                   String isbn) {
+        Book book = new Book();
+        book.setTitle(title);
+        book.setIsbn(isbn);
+        return book;
+    }
+
+    private Publisher createPublisher(String name,
+                                             String city,
+                                             String state,
+                                             String address,
+                                             String zipCode) {
+        Publisher publisher = new Publisher();
+        publisher.setName(name);
+        publisher.setCity(city);
+        publisher.setState(state);
+        publisher.setAddress(address);
+        publisher.setZipCode(zipCode);
+        return publisher;
     }
 }
