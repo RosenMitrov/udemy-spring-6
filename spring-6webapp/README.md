@@ -1,3 +1,6 @@
+## Version 1.1.3
+Adding package for repostitories
+
 ## Version 1.1.2
 Adding Equals, Hash code and toString.
 
