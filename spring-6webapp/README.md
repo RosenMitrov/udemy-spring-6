@@ -1,3 +1,6 @@
+## Version 1.1.6
+Adding relationship between Publisher and Book.
+
 ## Version 1.1.5
 Adding Publisher Entity/Pojo and repository interface.
 
