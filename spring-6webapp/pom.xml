@@ -10,7 +10,8 @@
 	</parent>
 	<groupId>springframework</groupId>
 	<artifactId>spring-6webapp</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+<!--	MAJOR.MINOR.PATCH-->
+	<version>1.0.0</version>
 	<name>spring-6webapp</name>
 	<description>Spring 6 Web App</description>
 	<url/>
