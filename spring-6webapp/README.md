@@ -1,3 +1,6 @@
+## Version 1.1.5
+Adding Publisher Entity/Pojo and repository interface.
+
 ## Version 1.1.4
 Adding bootstrap data with command line runner interface.
 
