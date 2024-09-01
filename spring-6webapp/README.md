@@ -1,3 +1,6 @@
+## Version 1.1.9
+Adding Thymeleaf dependency and html for rendering Book list.
+
 ## Version 1.1.8
 Adding package for controller/web layer.
 
