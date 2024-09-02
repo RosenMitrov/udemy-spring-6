@@ -1,3 +1,6 @@
+## Version 1.1.10
+Adding authors service, repo, controller and html page.
+
 ## Version 1.1.9
 Adding Thymeleaf dependency and html for rendering Book list.
 
