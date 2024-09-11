@@ -1,4 +1,7 @@
 ## Version 1.0.1
+Adding dependency injection using Spring Framework.
+
+## Version 1.0.1
 Adding dependency injection without using Spring Framework.
 
 ## Version 1.0.1
