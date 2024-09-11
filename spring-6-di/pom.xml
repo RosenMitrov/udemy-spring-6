@@ -10,7 +10,7 @@
     </parent>
     <groupId>spring.framework</groupId>
     <artifactId>spring-6-di</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <name>spring-6-di</name>
     <description>spring-6-di</description>
     <url/>
