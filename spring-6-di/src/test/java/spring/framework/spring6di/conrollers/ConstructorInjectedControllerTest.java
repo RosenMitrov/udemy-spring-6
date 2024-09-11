@@ -1,18 +1,18 @@
 package spring.framework.spring6di.conrollers;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import spring.framework.spring6di.services.GreetingServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
-import static org.junit.jupiter.api.Assertions.*;
-
+@SpringBootTest
 class ConstructorInjectedControllerTest {
 
+    @Autowired
     ConstructorInjectedController constructorInjectedController;
-    @BeforeEach
-    void setUp() {
-        this.constructorInjectedController = new ConstructorInjectedController(new GreetingServiceImpl());
-    }
+//    @BeforeEach
+//    void setUp() {
+//        this.constructorInjectedController = new ConstructorInjectedController(new GreetingServiceImpl());
+//    }
 
     @Test
     void sayHello() {
